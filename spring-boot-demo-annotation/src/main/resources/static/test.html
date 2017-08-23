@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+test.html
+</body>
+<script  src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+    $.ajax({
+        //提交数据的类型 POST GET
+        type : 'GET',
+        //提交的网址
+        url : '/spring-boot/test/getAll',
+        contentType : 'application/json',
+        //返回数据的格式
+        dataType : 'json',
+        //成功返回之后调用的函数
+        success : function(data) {
+            alert(JSON.stringify(data));
+        },
+
+        error : function(XMLHttpRequest, textStatus, errorThrown) {
+            alert('error');
+        }
+    });
+</script>
+</html>
